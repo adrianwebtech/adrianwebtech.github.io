@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Alternative Fontawesome CDN
+    <script src="https://use.fontawesome.com/7b1328dc77.js"></script>
+    -->
+
+    <title>Minesweeper</title>
+</head>
+
+<body>
+    
+    <main class="container-fluid d-flex flex-wrap justify-content-center align-items-start pt-3">
+        <div class="row col-9 py-2 border">
+            <div class="dropdown col-3 text-center">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Easy
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item active" href="#">Easy</a>
+                    <a class="dropdown-item" href="#">Medium</a>
+                    <a class="dropdown-item" href="#">Hard</a>
+                </div>
+            </div>
+
+            <div class="col-3 d-flex align-items-center justify-content-center">
+                <i class="fas fa-flag fa-2x col-6 flag"></i>
+                <div id="flag-num" class="col text-left">99</div>
+            </div>
+
+            <div class="col-3 d-flex align-items-center justify-content-center">
+                <i class="far fa-clock fa-2x col-6 timer"></i>
+                <div id="timer-num" class="col text-left">099</div>
+            </div>
+
+            <div class="col-3 d-flex align-items-center justify-content-center">
+                <button type="button" class="btn btn-primary">Restart</button>
+            </div>
+        </div>
+
+        <div class="row col-9 py-2 border d-flex">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <canvas id="canvas" class="border border-dark" oncontextmenu="return false"></canvas>
+            </div>
+        </div>
+
+        
+
+    </main>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="vendor/fontawesome/js/all.js"></script>
+<script src="js/main.js"></script>
+
+</html>

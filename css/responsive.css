@@ -1,0 +1,85 @@
+/* Services */
+
+.service-offer {
+    border-radius: 20%;
+    width: 70%;
+}
+
+.service-offer .background-overlay {
+    border-radius: 20%;
+}
+
+/* About */
+
+#about-profile-pic {
+    width: 250px;
+}
+
+#about-myself-title {
+    text-align: center;
+    margin-top: 10px; 
+}
+
+#about-myself-desc {
+    text-align: justify;
+
+}
+
+/* Contact */
+#contact iframe {
+    height: 690px;
+}
+
+@media only screen and (min-width: 576px) {
+    /* Services */
+    .service-offer {
+        border-radius: 35%;
+        width: 100%;
+    }
+
+    .service-offer .background-overlay {
+        border-radius: 35%;
+    }
+
+    /* About */
+    #about-profile-pic {
+        width: 250px;
+    }
+
+    #about-myself-title {
+        text-align: left;
+        margin-top: 0;
+    }
+    
+    /* Contact */
+    #contact iframe {
+        height: 650px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    /* Services */
+    .service-offer {
+        border-radius: 30%;
+        width: 100%;
+    }
+
+    .service-offer .background-overlay {
+        border-radius: 30%;
+    }
+
+    /* About */
+    #about-profile-pic {
+        width: 450px;
+    }
+
+    #about-myself-title {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    /* Contact */
+    #contact iframe {
+        height: 650px;
+    }
+}

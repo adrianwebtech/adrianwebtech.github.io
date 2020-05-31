@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.flag {
+    color: #d63031;
+}
+
+.timer {
+    color: blue;
+}
+
+#canvas {
+
+}
