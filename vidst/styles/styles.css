@@ -1,0 +1,127 @@
+body {
+	margin:: 0px;
+	padding: 0px;
+}
+
+div#id-slider {
+  margin: 10px 0 10px 0;
+  width: 100%;
+}
+
+
+.block {
+	display: block;
+	/*border: 1px dotted orange;*/
+}
+
+.inline-block {
+	display: inline-block;
+	/*border: 1px dashed green;*/
+}
+
+#id-video-slider-control-container {
+	width: 100%;
+	text-align: center;
+	background: #c7ecee;
+}
+
+#id-video-slider-control-container, .expand {
+	height: 400px;
+}
+
+#id-video-container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.inline-block#video-block {
+	width: 45%;
+}
+
+.inline-block#track-block {
+	width: 30%;
+}
+
+.tracktext {
+	font-size: 1.3em;
+	margin-top: 5%;
+}
+
+
+#showvidtime {
+	margin: 5px 0;
+}
+
+.sticky {
+  	position: fixed;
+  	top: 0;
+}
+
+#id-workable {
+	
+}
+
+.subtitle > div {
+	width: 49%;
+	vertical-align: top;
+}
+
+.subtitle div div {
+
+}
+
+.subtitle div div label {
+	width: 10%;
+	/*overflow: hidden;*/
+}
+
+.subtitle div div input {
+	width: 60%;
+}
+
+.subtitle div div .chrcount {
+	width: 5%;
+	margin-left: 5px;
+	margin-right: 5px;
+	background: green;
+	color: white;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+.subtitle div div button {
+	width: 5%;
+}
+
+.label, .timelabel {
+	background: #ecf0f1;
+}
+
+.smallvideoset {
+	border: 2px black solid;
+	margin: 5px 0 5px 0;
+	padding: 5px 0 5px 0;
+	font-size: 1.2em;
+}
+
+.rightarrow {
+	text-align: center;
+}
+
+.itemnum, .srctime, .desttime, .rightarrow, .point-timediff, .timediff {
+	padding: 2px 10px 2px 10px;
+	margin: 2px;
+}
+
+.itemnum {
+	background-color: red;
+	width: 50px;
+	text-align: center;
+}
+
+.timediff {
+	border-left: 2px dashed orange;
+	border-right: 2px dashed orange;
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Video Subtitling</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://kit.fontawesome.com/c46fc70fd1.js" crossorigin="anonymous"></script>
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery.caret.1.02.min.js"></script>
+		<script type="text/javascript" src="javascript/operation.js"></script>
+	</head>
+	
+	<body>
+		<div id="id-dummy-container"></div>
+		<div id="id-video-slider-control-container">
+			<div id="id-video-container">
+				<div id="video-block" class="inline-block">
+					<video width="100%" height="auto" class="video" id="video-1">
+						<source id="videosrc" src="" type="video/mp4">
+						<!-- <track kind="subtitle" src="essential/Sound_Of_Happiness_Ep133.vtt" label="English" srclang="en" default=""> -->
+					</video>
+				</div>
+				
+				<div id="track-block" class="inline-block video-block">
+					<div id="zh" class="tracktext block"></div>
+					<div id="en" class="tracktext block"></div>
+					<!-- <video width="100%" height="auto" class="video" id="video-2-muted" muted>
+						<source src="essential/JLLN026929_The Sound of Happiness E133_HD_encode_px_Low-Res_Proxy.mp4" type="video/mp4">
+					</video> -->
+				</div>
+			</div>
+
+			<div id="id-slider-control-container">
+				<div id="id-slider">
+					<!-- <input type="range" min="1" max="100" value="50" class="slider"> -->
+				</div>
+
+				<div id="id-showvidtime">
+					<div id="min-videotime" class="inline-block"></div>
+					<input type="text" id="curr-videotime" class="inline-block" style="border:0; color:#fa4b2a; font-weight:bold; text-align: center; background-color: #c7ecee" readonly>
+					<div id="max-videotime" class="inline-block"></div>
+				</div>
+			</div>
+			
+
+			<div id="id-control-container">
+				<button id="id-upload-video" class="button inline-block">
+					<i class="fas fa-upload"> V</i>
+				</button>
+
+				<div id="file-input-video" style="display: none;">
+					<input type="file" name="name"/>
+				</div>
+
+				<button id="id-upload-srcsrt" class="button inline-block">
+					<i class="fas fa-upload"> SC</i>
+				</button>
+
+				<div id="file-input-srcsrt" style="display: none;">
+					<input type="file" name="name"/>
+				</div>
+
+				<button id="id-upload-trnsrt" class="button inline-block">
+					<i class="fas fa-upload"> TR</i>
+				</button>
+
+				<div id="file-input-trnsrt" style="display: none;">
+					<input type="file" name="name" />
+				</div>
+
+				<button id="id-erase" class="button inline-block">
+					<i class="fas fa-eraser"></i>
+				</button>
+
+				<button id="id-google-translate" class="button inline-block">
+					<i class="fab fa-google"></i>
+				</button>
+
+				<button id="id-download-srcsrt" class="button inline-block">
+					<i class="fas fa-download"> SC</i>
+				</button>
+
+				<button id="id-download-trnsrt" class="button inline-block">
+					<i class="fas fa-download"> TR</i>
+				</button>
+
+				<div id="id-input-filename" class="text inline-block">
+					<label for="input-filename">Filename: </label>
+					<input type="text" name="input-filename" id="input-filename" placeholder="<filename>" style="width: 150px">
+				</div>
+
+				<button id="id-play-pause" class="button inline-block">
+					<i class="fas fa-play"></i>
+					<i class="fas fa-stop"></i>
+				</button>
+
+				<button id="id-reset" class="button inline-block">
+					<i class="fas fa-sync-alt"></i>
+				</button>
+
+				<button id="id-backward-15s" class="button inline-block">
+					<i class="fas fa-backward"> 15</i>
+				</button>
+
+				<button id="id-backward-7s" class="button inline-block">
+					<i class="fas fa-backward"> 7</i>
+				</button>
+
+				<button id="id-backward-1s" class="button inline-block">
+					<i class="fas fa-backward"> 1</i>
+				</button>
+
+				<button id="id-forward-1s" class="button inline-block">
+					<i class="fas fa-forward"> 1</i>
+				</button>
+
+				<button id="id-forward-7s" class="button inline-block">
+					<i class="fas fa-forward"> 7</i>
+				</button>
+
+				<button id="id-forward-15s" class="button inline-block">
+					<i class="fas fa-forward"> 15</i>
+				</button>
+
+				<button id="id-forward-95s" class="button inline-block">
+					<i class="fas fa-forward"> 95</i>
+				</button>
+
+				<div id="id-input-limit" class="text inline-block">
+					<label for="input-limit">Limit: </label>
+					<input type="text" name="limit" id="input-limit" value="70" style="width: 25px">
+				</div>
+
+				<button id="id-set-limit" class="button inline-block">
+					<i class="fas fa-thumbs-up"></i>
+				</button>	
+			</div>
+
+			<!-- <div id="id-filename-container">
+				<div id="id-srcfilename" class="inline-block">
+					<label for="srcfilename">Source file</label>
+					<input type="text" name="srcfilename" id="srcfilename" placeholder="Source filename" readonly>
+				</div>
+				
+				<div id="id-trnfilename" class="inline-block">
+					<label for="trnfilename">Translated file</label>
+					<input type="text" name="srcfilename" id="srcfilename" placeholder="Source filename" readonly>
+				</div>
+			</div> -->
+		</div>
+
+		<div id="id-workable">
+			<div class="smallvideoset block">
+				<div class="controllable block">
+					<div class="itemnum inline-block">
+						1
+					</div>
+
+					<div class="timedisp inline-block">
+						<div class="realtime inline-block">
+							<div class="srctime inline-block">
+								<div id="shour" class="timelabel inline-block">
+									00
+								</div>:
+
+								<div id="smin" class="timelabel inline-block">
+									02
+								</div>:
+
+								<div id="ssecond" class="timelabel inline-block">
+									03
+								</div>:
+
+								<div id="smsecond" class="timelabel inline-block">
+									500
+								</div>
+							</div>
+
+							<div class="rightarrow inline-block">
+								<i class="fas fa-arrow-right"></i>
+							</div>
+
+							<div class="desttime inline-block">
+								<div id="ehour" class="timelabel inline-block">
+									00
+								</div>:
+
+								<div id="emin" class="timelabel inline-block">
+									02
+								</div>:
+
+								<div id="esecond" class="timelabel inline-block">
+									07
+								</div>:
+
+								<div id="emsecond" class="timelabel inline-block">
+									600
+								</div>
+							</div>
+						</div>
+
+						<div class="point-timediff inline-block">
+							<i class="far fa-hand-point-right"></i>
+						</div>
+						
+						<div class="timediff inline-block">
+							<div id="dhour" class="timelabel inline-block">
+								00
+							</div> h
+
+							<div id="dmin" class="timelabel inline-block">
+								00
+							</div> m
+
+							<div id="dsecond" class="timelabel inline-block">
+								04
+							</div> s
+
+							<div id="dmsecond" class="timelabel inline-block">
+								100
+							</div> ms
+						</div>	
+					</div>
+
+					<div class="control inline-block">
+						<button id="id-b1-skip-play" class="skip-play button inline-block">
+							<i class="fas fa-play"></i>
+						</button>
+
+						<button id="id-b1-skip" class="skip button inline-block">
+							<i class="fas fa-shipping-fast"></i>
+						</button>
+					</div>
+				</div>
+
+				<div class="subtitle block">
+					<div class="src inline-block">
+						<div id="b1s1" class="srcblock">
+							<label for="srctxt" class="inline-block label">S:</label>
+							<input type="text" id="id-b1s1-srctxt" name="srctxt" class="inline-block" value="I am so good...">
+							<div class="chrcount inline-block">35</div>
+						</div>
+
+						<div id="b1s2" class="srcblock">
+							<label for="srctxt" class="inline-block label">S:</label>
+							<input type="text" id="id-b1s2-srctxt" name="srctxt" class="inline-block" value="...in the...">
+							<div class="chrcount inline-block">35</div>
+							<button class="remove inline-block button"><i class="fas fa-trash-alt"></i></button>
+						</div>
+					</div>
+
+					<div class="translated inline-block">
+						<div id="b2s1" class="block">
+							<label for="subtxt" class="inline-block label">D:</label>
+							<input type="text" id="id-b2s1-subtxt" name="subtxt" class="inline-block">
+							<div class="chrcount inline-block">30</div>
+							<button class="remove inline-block button"><i class="fas fa-trash-alt"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
