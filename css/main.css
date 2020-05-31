@@ -226,6 +226,27 @@ nav.nav-wrap-fixed-top {
     z-index: 1030;
 }
 
+.navbar-social-icons-container {
+    flex-basis: 10%;
+    justify-content: left;
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.navbar-social-icons-container .social-icon a {
+    color: white;
+    font-size: 27px;
+}
+
+.navbar-social-icons-container .social-icon a:hover {
+    opacity: 60%;
+}
+
+.navbar-social-icons-container .social-icon:not(:first-child) {
+    margin-left: 20px;
+}
+
 /* Home */
 
 .full-container {
@@ -291,10 +312,6 @@ nav.nav-wrap-fixed-top {
     transform: scale(1.2);
     border-radius: 20px;
     border-color: rgb(255, 255, 255, 0.7);
-}
-
-#whoami {
-    align-items: flex-start;
 }
 
 /* Services */

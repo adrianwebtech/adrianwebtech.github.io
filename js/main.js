@@ -35,7 +35,7 @@ function onYouTubeIframeAPIReady() {
         playerVars: {
             autoplay: 1,
             loop: 1,
-            origin: '',
+            playlist: 'lRTtMcx6rSM',
         },
         events: {
             'onReady': onPlayerReady,
