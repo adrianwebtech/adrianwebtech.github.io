@@ -2,57 +2,6 @@ var backgroundvid_aspect_ratio = 900 / 506;
 var window_aspect_ratio = 0;
 
 /**************************************************************
-For youtube iframe initialisation using Youtube Iframe API
- *************************************************************/
-var w = $(window).width();
-var h = $(window).height();
-var player;
-
-// Set width and height of initial iframe
-window_aspect_ratio = $(window).width() / $(window).height();
-if (window_aspect_ratio > backgroundvid_aspect_ratio) {
-    w = $(window).width() * 2;
-    h = $(window).width() / backgroundvid_aspect_ratio;
-}
-else {
-    w = $(window).height() * 2 * backgroundvid_aspect_ratio;
-    h = $(window).height();
-}
-
-// This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// This function creates an <iframe> (and YouTube player)
-// after the API code downloads.
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: h.toString(),
-        width: w.toString(),
-        videoId: 'lRTtMcx6rSM',
-        playerVars: {
-            autoplay: 1,
-            loop: 1,
-            playlist: 'lRTtMcx6rSM',
-        },
-        events: {
-            'onReady': onPlayerReady,
-        }
-    });
-}
-
-// When player is ready, check for initial window size
-// Stop video when it is less than 768px (tablet/mobile size)
-function onPlayerReady(event) {
-    if ($(window).width() < 768) {
-        $(".video-container iframe").hide();
-    }
-}
-
-
-/**************************************************************
 Code execution when the web page has loaded completely
  *************************************************************/
 $(document).ready(function () {
