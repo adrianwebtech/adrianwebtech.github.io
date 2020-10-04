@@ -158,7 +158,7 @@ html.is-transitioning {
 
 /* Overall CSS wedding related */
 .wedding-box {
-    width: 100%;
+    width: 400px;
     background: white;  
     overflow: hidden;
 }
@@ -374,7 +374,12 @@ div.paceDiv {
 
 #slide-2 .info-box .map {
     z-index: 20;
-    top: 70px;
+    top: 70px;  
+}
+
+#slide-2 .info-box .map iframe {
+    width: 280px;
+    height: 200px;
 }
 
 #slide-2 .info-box .wedding-flow {
@@ -566,10 +571,142 @@ div.paceDiv {
 }
 
 /* Responsive */
-@media only screen and (min-width: 400px) {
+@media only screen and (max-width: 400px) {
 
     /* Overall CSS wedding related */
     .wedding-box {
-        width: 400px;
+        width: 100%;
+    }
+
+    #slide-1 .info-box,
+    #slide-3 .info-box,
+    #slide-4 .info-box {
+        height: 45vh;
+    }
+
+    #slide-1 .half-overlay,
+    #slide-2 .half-overlay,
+    #slide-3 .half-overlay,
+    #slide-4 .half-overlay {
+        height: 70vh;
+    }
+
+    /* Slide 1 */
+    #slide-1 .info-box .main-decoration-banner {
+        top: 0;
+    }
+
+    #slide-1 .invitation-text.en {
+        top: calc(15px + (25 - 15) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(11px + (23 - 11) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-1 .invitation-text.zh {
+        top: calc(15px + (30 - 15) * ((100vw - 200px) / (400 - 200)));
+        width: calc(30% + (45 - 30) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-1 .couple-names.en {
+        top: calc(35px + (65 - 35) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(5px + (15 - 5) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-1 .couple-names.zh {
+        top: calc(45px + (80 - 45) * ((100vw - 200px) / (400 - 200)));;
+        font-size: calc(10px + (20 - 10) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-1 .wedding-date.en,
+    #slide-1 .wedding-date.zh {
+        top: calc(60px + (140 - 60) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(10px + (20 - 10) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-1 .wedding-date.zh {
+        top: calc(70px + (140 - 70) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(8px + (15 - 8) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-1 .wedding-place {
+        top: calc(100px + (200 - 100) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(10px + (20 - 10) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    /* Slide 2 */
+    #slide-2 .info-box .surround-decoration-banner {
+        top: calc(3px + (8 - 3) * ((100vw - 200px) / (400 - 200)));
+        width: calc(81% + (83 - 81) * ((100vw - 200px) / (400 - 200)));;
+    }  
+
+    #slide-2 .info-box .invitation-text.en {
+        top: calc(12px + (25 - 12) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(13px + (23 - 13) * ((100vw - 200px) / (400 - 200)));;
+    }
+
+    #slide-2 .info-box .invitation-text.zh {
+        top: calc(14px + (30 - 14) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(13px + (25 - 13) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-2 .info-box .map {
+        top: calc(40px + (70 - 40) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-2 .info-box .map iframe {
+        width: calc(125px + (280 - 125) * ((100vw - 200px) / (400 - 200)));
+        height: calc(70px + (200 - 70) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-2 .info-box .wedding-flow {
+        top: calc(115px + (280 - 115) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(7px + (15 - 7) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-2 .info-box .rsvp {
+        top: calc(175px + (400 - 175) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(8px + (18 - 8) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-2 .info-box .contact-container {
+        top: calc(205px + (450 - 205) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-2 .info-box .contact-button {
+        padding: calc(2px + (10 - 2) * ((100vw - 200px) / (400 - 200)));
+        border-radius: calc(1px + (10 - 1) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-2 .info-box .contact-button a span {
+        font-size: calc(7px + (17 - 7) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    /* Slide 3 */
+    #slide-3 .info-box .surround-decoration-banner,
+    #slide-4 .info-box .surround-decoration-banner {
+        top: calc(50px + (100 - 50) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-3 .groom-name.en,
+    #slide-4 .bride-name.en {
+        top: calc(64px + (127 - 64) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(11px + (23 - 11) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-3 .groom-name.zh,
+    #slide-4 .bride-name.zh {
+        top: calc(64px + (127 - 64) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(11px + (23 - 11) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-3 .groom-quotes.en,
+    #slide-4 .bride-quotes.en {
+        top: calc(100px + (200 - 100) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(6px + (12 - 6) * ((100vw - 200px) / (400 - 200)));
+    }
+
+    #slide-3 .groom-quotes.zh,
+    #slide-4 .bride-quotes.zh {
+        top: calc(100px + (200 - 100) * ((100vw - 200px) / (400 - 200)));
+        font-size: calc(7px + (12 - 7) * ((100vw - 200px) / (400 - 200)));
     }
 }
